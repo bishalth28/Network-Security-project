@@ -9,13 +9,13 @@ def get_requirements() -> List[str]:
     """
     this function will retun list of requirements
     """
-    requirement_lst = List[str]=[]
+    requirement_lst = []
     try:
        with open("requirements.txt", "r") as f:
           lines = f.readlines()
           for line in lines:
              requirement=line.strip()
-             if requirement and not requirement!= '-e .':
+             if requirement and requirement!= '-e .':
                 requirement_lst.append(requirement)
     except FileNotFoundError:
          print("requirements.txt file not found.")
